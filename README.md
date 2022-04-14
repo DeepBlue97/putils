@@ -1,2 +1,2 @@
 # putils
-peter's custom utils by python.
+peter's custom utils var python.
