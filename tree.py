@@ -8,7 +8,7 @@ import os
 import os.path
 
 
-def tree(path, max_depth: int = None, ignore: set = None, depth=1):
+def tree(path, max_depth: int = None, dir_only=True, ignore: set = None, depth=1):
     if ignore is None:
         ignore = set()
     if max_depth is not None:
@@ -22,10 +22,14 @@ def tree(path, max_depth: int = None, ignore: set = None, depth=1):
         if item in ignore:
             continue
         else:
-            print("| " * depth + "+--" + item)
             newitem = path + '/' + item
             if os.path.isdir(newitem):
-                tree(newitem, max_depth, ignore, depth + 1)
+                print("| " * depth + "+--" + item)
+                tree(newitem, max_depth, dir_only, ignore, depth + 1)
+            elif dir_only:
+                pass
+            else:  # print filename
+                print("| " * depth + "+--" + item)
 
 
 if __name__ == '__main__':
