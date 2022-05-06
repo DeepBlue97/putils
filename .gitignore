@@ -127,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/.idea
+/putil/labelmetococo/02Abyyl_qths_EL_20200F9CD6_90_3_EL-KXD3.json
